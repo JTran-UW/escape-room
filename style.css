@@ -1,0 +1,99 @@
+* {
+    position: absolute;
+}
+
+body {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-family: Segoe UI;
+    font-weight: 300;
+}
+
+.curtain {
+    background-color:black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+}
+
+.text-block {
+    color: black;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.password {
+    top: 62%;
+}
+
+.in-block {
+    position: relative;
+}
+
+.intro {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    display: table;
+    width: 12vw;
+    height: 10vh;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: gold;
+    color:black;
+}
+
+.button-text {
+    display: table-cell;
+    position: relative;
+    font-size: 1vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.title {
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slideup {
+    animation-duration: 3s;
+    animation-name: unveil;
+    animation-fill-mode: forwards;
+}
+
+.vanish {
+    animation-duration: 2s;
+    animation-name: disappear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unveil {
+    from { height: 100%; }
+    to   { height: 0%;   }
+}
+
+@keyframes disappear {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
