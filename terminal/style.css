@@ -1,0 +1,81 @@
+@font-face {
+    font-family: UbuntuMono;
+    src: url("UbuntuMono-R.ttf");
+}
+
+#bootmessage {
+  margin-top: 0px;
+}
+
+body {
+  margin-top: 0px;
+}
+
+html {
+  background-color: black;
+  color: white;
+  font-family: UbuntuMono
+}
+
+.green {
+  color: green;
+  display: inline-block;
+}
+
+.lightgreen {
+  color: #29fd2e;
+}
+
+.blue {
+  color: #0628b7;
+}
+
+#cmd {
+  display: inline-block;
+  font-size: 14px;
+  top: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+#cmd-old {
+  font-size: 14px;
+  padding-left: 9px;
+}
+
+#cmd span {
+  float: left;
+  padding-left: 1px;
+  white-space: pre;
+}
+
+#cursor {
+  float: left;
+  width: 5px;
+  height: 14px;
+  background: #21f838;
+}
+  
+input {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  opacity: 0; 
+}
+
+.username {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: none;
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.show {
+  display: inline-block;
+}
+
+.userinput {
+  position: relative;
+}

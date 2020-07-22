@@ -6,30 +6,33 @@
         <script type="text/javascript" src="min.js"></script>
     </head>
     <body onload="clock()">
-<!--        <div class="curtain">
-            <div id="intro"></div>
-            <div id="calendar"></div>
+        <div class="curtain">
+            <div class="time">
+                <div id="intro"></div>
+                <div id="calendar"></div>
+            </div>
 
             <div class="button" onclick="run()">
                 <p class="button-text">Login</p>
-            </button>
             </div>
-        </div>-->
+
+            <div class="buffer"></div>
+        </div>
         <div class="login-background"></div>
         <img src="hamburger.png" class="menu" onclick="drop()"><br><br>
 
         <div id="dropdown" class="dropdown-content">
             <a>Email</a>
             <a>Notes</a>
-            <a>Terminal</a>
+            <a href="../terminal/boot.html">Terminal</a>
         </div>
 
         <img src="lock.png" class="lock">
 
         <p class="title">Dr. Chen</p>
-        <div class="text-block password">
-            <input placeholder="Enter Password" type="password" class="in-block userinput">
-        </div>
+        <input placeholder="Enter Password" type="password" class="userinput">
+        
+        <div class="buffer"></div>
 
     </body>
 </html>
