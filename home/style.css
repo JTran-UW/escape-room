@@ -20,9 +20,10 @@ html::-webkit-scrollbar {
 }
 
 .login-background {
-    background-image: url("blue\ wallpaper.png");
-    background-size: 100% 100%;
+    background-image: url("medical.jpg");
+    background-size: 100% auto;
     background-position: center;
+    filter: blur(6px);
     position: fixed;
     height: 100%;
     width: 100%;
@@ -96,8 +97,8 @@ html::-webkit-scrollbar {
 }
 
 .time {
-    top: 650px;
-    left: 40px;
+    top: 620px;
+    left: 110px;
 }
 
 #intro {
@@ -172,9 +173,10 @@ html::-webkit-scrollbar {
     display: block;
 }
 
-.slideup {
-    animation-duration: 2s;
-    animation-name: unveil;
+.vanish {
+    animation-duration: 0.5s, 0.1s;
+    animation-name: disappear, shift;
+    animation-delay: 0ms, 0.5s;
     animation-fill-mode: forwards;
 }
 
@@ -182,7 +184,12 @@ html::-webkit-scrollbar {
     display: block;
 }
 
-@keyframes unveil {
+@keyframes shift {
     from { height: 100%; }
-    to   { height: 0%; }
+    to { height: 0%; }
+}
+
+@keyframes disappear {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }

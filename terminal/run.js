@@ -1,3 +1,5 @@
+//Below you may find answers... but do you want them?
+
 window.enter = false;
 window.lastindex = 0;
 window.focused = true;
@@ -36,29 +38,42 @@ window.onload = async function bootup() {
     }
 }
 
+var responsegen = function(string) {
+  return `
+  <br>
+  <p id="typespace" class="response">` + string + `</p>
+  `;
+}
+
 var reset = function() {
 
   document.getElementById("listen").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
-        var page = document.getElementById("page");
-        var userinput = document.getElementById("line");
-        var inputvalue = userinput.innerHTML;
-        var command = document.getElementById("command").innerHTML;
+      var page = document.getElementById("page");
+      var userinput = document.getElementById("line");
+      var inputvalue = userinput.innerHTML;
+      var command = document.getElementById("command").innerHTML; + "</span>"
 
-        var end = inputvalue.indexOf('$</span>', window.lastindex) + 8;
-        window.lastindex = end;
-        userinput.innerHTML = inputvalue.slice(0, end) + "</p><span id='cmd-old'>" + command + `</span>
-        <br>
-        <p id="typespace" class="username show"><span class="lightgreen">chen@StartUp</span>:<span class="blue"> ~ $</span></p>
-        <span id="cmd">
-          <span id="command"></span>
-          <div id="cursor"></div>
-        </span>
-        <input id="listen" type="text" value=""/>
-        `;
-        page.scrollTop = page.scrollHeight;
-        window.enter = true;
+      if (command == "help") {
+        command = command;
+      } else {
+        command += responsegen("Unknown command, use 'help' for list of all commands.");
       }
+
+      var end = inputvalue.indexOf('$</span>', window.lastindex) + 8;
+      window.lastindex = end;
+      userinput.innerHTML = inputvalue.slice(0, end) + "</p><span id='cmd-old'>" + command + `</span>
+      <br>
+      <p id="typespace" class="username show"><span class="lightgreen">chen@seattlechildrens</span>:<span class="blue"> ~ $</span></p>
+      <span id="cmd">
+        <span id="command"></span>
+        <div id="cursor"></div>
+      </span>
+      <input id="listen" type="text" value=""/>
+      `;
+      page.scrollTop = page.scrollHeight;
+      window.enter = true;
+    }
   })
 }
 

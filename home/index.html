@@ -6,14 +6,10 @@
         <script type="text/javascript" src="min.js"></script>
     </head>
     <body onload="clock()">
-        <div class="curtain">
+        <div class="curtain" onclick="run()">
             <div class="time">
                 <div id="intro"></div>
                 <div id="calendar"></div>
-            </div>
-
-            <div class="button" onclick="run()">
-                <p class="button-text">Login</p>
             </div>
 
             <div class="buffer"></div>
@@ -22,7 +18,7 @@
         <img src="hamburger.png" class="menu" onclick="drop()"><br><br>
 
         <div id="dropdown" class="dropdown-content">
-            <a>Email</a>
+            <a href="../email/email.html">Email</a>
             <a>Notes</a>
             <a href="../terminal/boot.html">Terminal</a>
         </div>

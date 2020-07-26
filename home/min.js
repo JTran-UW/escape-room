@@ -1,5 +1,5 @@
 function run() {
-    document.querySelector(".curtain").classList.add("slideup");
+    document.querySelector(".curtain").classList.add("vanish");
 }
 
 function clock() {
