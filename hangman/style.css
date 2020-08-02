@@ -1,0 +1,180 @@
+html {
+    font-family: Segoe UI;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
+}
+
+.fail {
+    background-color: red;
+}
+
+.success {
+    background-color: green;
+}
+
+.home {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%); 
+    background-color: green;
+    color: white;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.home:hover {
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+.home p {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%); 
+}
+
+.fail-title {
+    color: white;
+    font-size: 75px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.retry {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%); 
+    background-color: red;
+    color: white;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.retry:hover {
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
+
+.retry p {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%); 
+}
+
+body {
+    font-size: 0px;
+}
+
+#man {
+    display: block;
+    margin: 30px auto 0px;
+    width: 320px;
+}
+
+.letter {
+    width: 50px;
+    display: inline-block;
+    padding: 20px 50px;
+    font-size: 20px;
+    margin: 0px 0px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.letter:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.letterclickedwrong {
+    background-color: red;
+    color: white;
+    pointer-events: none;
+}
+
+.letterclickedright {
+    background-color: green;
+    color: white;
+    pointer-events: none;
+}
+
+.letterbox {
+    margin: 50px auto 0px;
+    width: 80%;
+}
+
+.ans {
+    margin: 30px auto 0px;
+    width: 70%;
+}
+
+.unclicked p {
+    visibility: hidden;
+}
+
+.clicked p {
+    visibility: visible;
+}
+
+.letterans {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 35px;
+    margin: 10px 10px;
+    text-align: center;
+}
+
+.letterans p {
+    margin: 0px;
+}
+
+.space {
+    border-bottom: 0px;
+}
+
+.wrong {
+    animation-duration: 0.2s, 0.2s;
+    animation-name: wrong1, wrong2;
+    animation-delay: 0s, 0.2s;
+}
+
+.correct { 
+    animation-duration: 0.2s, 0.2s;
+    animation-name: correct1, correct2;
+    animation-delay: 0s, 0.2s;
+}
+
+@keyframes wrong1 {
+    from { background-color: white; }
+    to { background-color: red; }
+}
+
+@keyframes wrong2 {
+    from { background-color: red; }
+    to { background-color: white; }
+}
+
+@keyframes correct1 {
+    from { background-color: white; }
+    to { background-color: green; }
+}
+
+@keyframes correct2 {
+    from { background-color: green; }
+    to { background-color: white; }
+}

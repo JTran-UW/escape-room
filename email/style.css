@@ -161,7 +161,7 @@ body {
 
 .email img {
     margin-left: 10px;
-    width: 40px;
+    width: 35px;
 }
 
 .email p {
@@ -210,7 +210,7 @@ body {
 }
 
 .info img {
-    width: 50px;
+    width: 40px;
 }
 
 .from {
@@ -225,4 +225,8 @@ body {
 .content {
     margin-left: 50px;
     margin-right: 100px;
+}
+
+.unread {
+    border-left: 5px solid rgb(0, 98, 255);
 }
