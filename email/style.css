@@ -41,8 +41,9 @@ body {
     width: 330px;
     background-color: white;
     color: black;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
 }
 
 .center::-webkit-scrollbar {

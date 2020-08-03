@@ -11,8 +11,9 @@ body {
 html {
     font-family: Segoe UI;
     font-weight: 300;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
 }
 
 html::-webkit-scrollbar {
@@ -58,8 +59,9 @@ html::-webkit-scrollbar {
     height: 100%;
     color: white;
     z-index: 1;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
 }
 
 .curtain::-webkit-scrollbar {
