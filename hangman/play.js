@@ -52,7 +52,7 @@ var retry = function() {
 }
 
 var home = function() {
-    window.location.href = "../home/index.html";
+    window.location.href = "../index.html";
 }
 
 var showkey1 = function() {
