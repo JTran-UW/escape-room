@@ -41,6 +41,12 @@ body {
     width: 330px;
     background-color: white;
     color: black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.center::-webkit-scrollbar {
+    display: none;
 }
 
 .right {

@@ -87,3 +87,112 @@ input {
 .userinput {
   position: relative;
 }
+
+.keybox {
+  color: black;
+  width: 500px;
+  height: 320px;
+  padding: 10px 15px;
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  background-color: white;
+  font-size: 16px;
+}
+
+.close {
+  width: 100%;
+  height: 20px;
+}
+
+.close-button {
+  font-size: 18px;
+  float: right;
+  cursor: pointer;
+}
+
+.show-block { 
+  visibility: visible;
+}
+
+.leader {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  margin: 10px auto;
+}
+
+.color {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.red-button-ready {
+  background-color: #fc0303;
+}
+
+.red-button-ready:hover {
+  background-color: #c90000;
+}
+
+.red-button {
+  background-color: #c90000;
+}
+
+.yellow-button-ready {
+  background-color: #fff200;
+}
+
+.yellow-button {
+  background-color: #bdb300;
+}
+
+.yellow-button-ready:hover {
+  background-color: #bdb300;
+}
+
+.blue-button-ready {
+  background-color: #1100ff;
+}
+
+.blue-button {
+  background-color: #0c00b0;
+}
+
+.blue-button-ready:hover {
+  background-color: #0c00b0;
+}
+
+.green-button-ready {
+  background-color: #00ff37;
+}
+
+.green-button {
+  background-color: #00ad25;
+}
+
+.green-button-ready:hover {
+  background-color: #00ad25;
+}
+
+.color-bar {
+  margin: 0px auto;
+  width: 305px;
+}
+
+.keytitle3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.start {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}

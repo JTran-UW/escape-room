@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Challenge Failed</title>
+        <title>Challenge Passed</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="play.js"></script>
+        <script type="text/javascript" src="load.js"></script>
     </head>
     <body class="success">
         <p class="fail-title">Challenge Passed</p>
-        <div class="home" onclick="home()">
+        <div class="home success-button" onclick="home()">
             <p>Home</p>
+        </div>
+        <div class="keytitle" onclick="showkey1()">
+            <p>Key #1 Available</p>
+            <img src="key.png" class="key">
+        </div>
+        <div class="keytitle" onclick="showkey2()">
+            <p>Key #2 Available</p>
+            <img src="key.png" class="key">
+        </div>
+        <div class="key1 keybox" id="key1">
+            <div class="close">
+                <div class="close-button" onclick="closekey1()">X</div>
+            </div>
+            <p class="key1title">Lauren's Puzzle</p>
+            <p>Insert the right letters above the right numbers to get the first key:<br><br>
+                ___ ___ ___ ___ ___ ___<br>
+                &nbsp;6&nbsp;&emsp;1&emsp;3&emsp;5&emsp;4&emsp;2
+        </div>
+        <div class="key2 keybox" id="key2">
+            <div class="close">
+                <div class="close-button" onclick="closekey2()">X</div>
+            </div>
+            <p class="key1title">Second Key</p>
+            <p>The second key is NOODLE</p>
         </div>
     </body>
 </html>

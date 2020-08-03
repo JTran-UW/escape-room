@@ -54,3 +54,19 @@ var retry = function() {
 var home = function() {
     window.location.href = "../home/index.html";
 }
+
+var showkey1 = function() {
+    document.getElementById("key1").classList.add("show");
+}
+
+var closekey1 = function() {
+    document.getElementById("key1").classList.remove("show");
+}
+
+var showkey2 = function() {
+    document.getElementById("key2").classList.add("show");
+}
+
+var closekey2 = function() {
+    document.getElementById("key2").classList.remove("show");
+}

@@ -3,6 +3,9 @@
 window.enter = false;
 window.lastindex = 0;
 window.focused = true;
+window.key1 = false;
+window.key2 = false;
+window.key3 = false;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -55,7 +58,82 @@ var reset = function() {
       var command = document.getElementById("command").innerHTML; + "</span>"
 
       if (command == "help") {
-        command = command;
+        command += responsegen(`
+        Available commands:<br>
+        -help: get all available commands<br>
+        -recovery: recover computer password<br>
+        -key: use a key for password recovery<br>
+        -hint: get hint for finding a key<br>
+        -sequence: run sequence cracker
+        `);
+      } else if (command == "recovery") {
+        if (window.key1 == false || window.key2 == false || window.key3 == false) {
+          command += responsegen(`
+          In order to recover password, all three keys must be found!<br>
+          <br>
+          Found a key? Use this command for each key you find:<br>
+          key [key number] [key value]<br>
+          <br>
+          For example, if you knew key 2, and it was JUMP:<br>
+          key 2 JUMP
+          `);
+        } else {
+          command += responsegen("Your password is: PASSWORD123");
+        }
+      } else if (command.substr(0, 3) == "key") {
+        if (command.charAt(4) == "1") {
+          if (command.substr(6).toUpperCase() == "PIGEON") {
+            command += responsegen("Key 1 Unlocked.");
+            window.key1 = true;
+          } else {
+            command += responsegen("Key is incorrect.");
+          }
+        } else if (command.charAt(4) == "2") {
+          if (command.substr(6).toUpperCase() == "NOODLE") {
+            command += responsegen("Key 2 Unlocked.");
+            window.key2 = true;
+          } else {
+            command += responsegen("Key is incorrect.");
+          }
+        } else if (command.charAt(4) == "3") {
+          if (command.substr(6).toUpperCase() == "SKATEBOARD") {
+            command += responsegen("Key 3 Unlocked.");
+            window.key3 = true;
+          } else {
+            command += responsegen("Key is incorrect.")
+          }
+        } else {
+          command += responsegen(`
+          Please use the correct format.<br>
+          <br>
+          Found a key? Use this command for each key you find:<br>
+          key [key number] [key value]<br>
+          <br>
+          For example, if you knew key 2, and it was JUMP:<br>
+          key 2 JUMP
+          `);
+        }
+      } else if (command.substr(0, 4) == "hint") {
+        if (command.charAt(5) == "1") {
+          command += responsegen("Hint for key 1: Lauren's puzzle");
+        } else if (command.charAt(5) == "2") {
+          command += responsegen("Hint for key 2: Hangman");
+        } else if (command.charAt(5) == "3") {
+          command += responsegen("Hint for key 3: Follow the leader")
+        } else {
+          command += responsegen(`
+          Please use the correct format<br>
+          <br>
+          To receive a hint, use this commmand:<br>
+          hint [key number]<br>
+          <br>
+          For example, to receive a hint about key 2, use:<br>
+          hint 2
+          `);
+        }
+      } else if (command == "sequence") {
+        command += responsegen("Starting....")
+        startkey3()
       } else {
         command += responsegen("Unknown command, use 'help' for list of all commands.");
       }
@@ -77,7 +155,138 @@ var reset = function() {
   })
 }
 
+var random = function () {
+  return Math.floor(Math.random() * (5 - 1) + 1);
+}
 
+var playkey3 = async function() {
+  // stop other functions
+  document.getElementById("start").onclick = "";
+  var leader = document.getElementById("leader");
+
+  // flash leader
+  var colors = []
+  for (var i = 0; i < 4; i++) {
+    colors.push(random())
+  }
+
+  for (var i = 0; i < colors.length; i++) {
+    if (colors[i] == 1) {
+      leader.classList.add("red-button-ready");
+      await sleep(1500);
+      leader.classList.remove("red-button-ready");
+      await sleep(200);
+    } else if (colors[i] == 2) {
+      leader.classList.add("blue-button-ready");
+      await sleep(1500);
+      leader.classList.remove("blue-button-ready");
+      await sleep(200);
+    } else if (colors[i] == 3) {
+      leader.classList.add("green-button-ready");
+      await sleep(1500);
+      leader.classList.remove("green-button-ready");
+      await sleep(200);
+    } else {
+      leader.classList.add("yellow-button-ready");
+      await sleep(1500);
+      leader.classList.remove("yellow-button-ready");
+      await sleep(200);
+    }
+  }
+
+  var c = document.getElementsByClassName("color");
+  for (var i = 0; i < c.length; i++) {
+    if (c[i].id == "red") {
+      c[i].classList.remove("red-button");
+      c[i].classList.add("red-button-ready");
+    } else if (c[i].id == "blue") {
+      c[i].classList.remove("blue-button");
+      c[i].classList.add("blue-button-ready");
+    } else if (c[i].id == "green") {
+      c[i].classList.remove("green-button");
+      c[i].classList.add("green-button-ready");
+    } else {
+      c[i].classList.remove("yellow-button");
+      c[i].classList.add("yellow-button-ready");
+    }
+  }
+
+  var red = document.getElementById("red");
+  var blue = document.getElementById("blue");
+  var green = document.getElementById("green");
+  var yellow = document.getElementById("yellow");
+  var response = [];
+  var responsecheck = [];
+
+  red.addEventListener("click", function() {
+    var l = response.push(1);
+    if (response[l - 1] == colors[l - 1]) {
+      responsecheck.push(true);
+    } else {
+      responsecheck.push(false);
+    }
+    if (l == colors.length) {
+      if (responsecheck.includes(false)) {
+        document.getElementById("ans").innerHTML = "Code not successfully sequenced.";
+      } else {
+        document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
+      }
+    }
+  });
+  blue.addEventListener("click", function() {
+    var l = response.push(2);
+    if (response[l - 1] == colors[l - 1]) {
+      responsecheck.push(true);
+    } else {
+      responsecheck.push(false);
+    }
+    if (l == colors.length) {
+      if (responsecheck.includes(false)) {
+        document.getElementById("ans").innerHTML = "Code not successfully sequenced.";
+      } else {
+        document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
+      }
+    }
+  });
+  green.addEventListener("click", function() {
+    var l = response.push(3);
+    if (response[l - 1] == colors[l - 1]) {
+      responsecheck.push(true);
+    } else {
+      responsecheck.push(false);
+    }
+    if (l == colors.length) {
+      if (responsecheck.includes(false)) {
+        document.getElementById("ans").innerHTML = "Code not successfully sequenced.";
+      } else {
+        document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
+      }
+    }
+  });
+  yellow.addEventListener("click", function() {
+    var l = response.push(4);
+    if (response[l - 1] == colors[l - 1]) {
+      responsecheck.push(true);
+    } else {
+      responsecheck.push(false);
+    }
+    if (l == colors.length) {
+      if (responsecheck.includes(false)) {
+        document.getElementById("ans").innerHTML = "Code not successfully sequenced.";
+      } else {
+        document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
+      }
+    }
+  });
+}
+
+var startkey3 = function() {
+  document.getElementById("key3").classList.add("show-block");
+}
+
+var closekey3 = function() {
+  document.getElementById("key3").classList.remove("show-block");
+}
 
 var listen = function () {
   var cursor;
