@@ -48,7 +48,7 @@ var guess = function(e) {
 }
 
 var retry = function() {
-    window.location.href = "hangman.html";
+    window.location.href = "keybreaker.html";
 }
 
 var home = function() {
