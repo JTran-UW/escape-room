@@ -95,3 +95,9 @@ window.onclick = function(event) {
         }
     }
 }
+
+document.getElementById("password").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        document.getElementsById("login").submit();
+    }
+});
