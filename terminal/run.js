@@ -57,7 +57,7 @@ var reset = function() {
       var inputvalue = userinput.innerHTML;
       var command = document.getElementById("command").innerHTML; + "</span>"
 
-      if (command == "help") {
+      if (command.toLowerCase() == "help") {
         command += responsegen(`
         Available commands:<br>
         -help: get all available commands<br>
@@ -66,7 +66,7 @@ var reset = function() {
         -hint: get hint for finding a key<br>
         -sequence: run sequence cracker
         `);
-      } else if (command == "recovery") {
+      } else if (command.toLowerCase() == "recovery") {
         if (window.key1 == false || window.key2 == false || window.key3 == false) {
           command += responsegen(`
           In order to recover password, all three keys must be found!<br>
@@ -80,7 +80,7 @@ var reset = function() {
         } else {
           command += responsegen("Your password is: PASSWORD123");
         }
-      } else if (command.substr(0, 3) == "key") {
+      } else if (command.substr(0, 3).toLowerCase() == "key") {
         if (command.charAt(4) == "1") {
           if (command.substr(6).toUpperCase() == "PIGEON") {
             command += responsegen("Key 1 Unlocked.");
@@ -113,7 +113,7 @@ var reset = function() {
           key 2 JUMP
           `);
         }
-      } else if (command.substr(0, 4) == "hint") {
+      } else if (command.substr(0, 4).toLowerCase() == "hint") {
         if (command.charAt(5) == "1") {
           command += responsegen("Hint for key 1: Lauren's puzzle");
         } else if (command.charAt(5) == "2") {
@@ -131,7 +131,7 @@ var reset = function() {
           hint 2
           `);
         }
-      } else if (command == "sequence") {
+      } else if (command.toLowerCase() == "sequence") {
         command += responsegen("Starting....")
         startkey3()
       } else {
@@ -159,7 +159,21 @@ var random = function () {
   return Math.floor(Math.random() * (5 - 1) + 1);
 }
 
+var seq_reset = function() {
+  document.getElementById("start").onclick = function(){playkey3()};
+  document.getElementById("red").classList.remove("red-button-ready");
+  document.getElementById("red").classList.add("red-button");
+  document.getElementById("blue").classList.remove("blue-button-ready");
+  document.getElementById("blue").classList.add("bue-button");
+  document.getElementById("green").classList.remove("green-button-ready");
+  document.getElementById("green").classList.add("green-button");
+  document.getElementById("yellow").classList.remove("yellow-button-ready");
+  document.getElementById("yellow").classList.add("yellow-button");
+}
+
 var playkey3 = async function() {
+  console.log("passed");
+  document.getElementById("ans").innerHTML = "";
   // stop other functions
   document.getElementById("start").onclick = "";
   var leader = document.getElementById("leader");
@@ -231,6 +245,7 @@ var playkey3 = async function() {
       } else {
         document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
       }
+      seq_reset();
     }
   });
   blue.addEventListener("click", function() {
@@ -246,6 +261,7 @@ var playkey3 = async function() {
       } else {
         document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
       }
+      seq_reset();
     }
   });
   green.addEventListener("click", function() {
@@ -261,6 +277,7 @@ var playkey3 = async function() {
       } else {
         document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
       }
+      seq_reset();
     }
   });
   yellow.addEventListener("click", function() {
@@ -276,6 +293,7 @@ var playkey3 = async function() {
       } else {
         document.getElementById("ans").innerHTML = "Code sequenced: Key 3 is SKATEBOARD";
       }
+      seq_reset();
     }
   });
 }
@@ -335,7 +353,7 @@ var listen = function () {
   });
 }
 
-var waittimes = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 5, 100, 500]
+var waittimes = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 5, 5, 100]
 
 var bootscript = `
 [    0.000000] Booting Linux on physical CPU 0x0

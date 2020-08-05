@@ -214,8 +214,8 @@ window.onload = function() {
                 Puzzle of the week: PRANLEAI<br>
                 Clue: Sky bus<br>
                 <br>
-                ___ ___ ___ ___ ___ ___ ___<br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2
+                ___ ___ ___ ___ ___ ___ ___ ___<br>
+                &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2
                 `
             } else if (targetid == "email14") {
                 subject.innerHTML = "BREAKING: CORONAVIRUS MUTATES TO CAUSE ZOMBIE-LIKE SYMPTOMS";
@@ -290,6 +290,9 @@ window.onload = function() {
                 if (window.email == targetid) {
                     showcontent.classList.toggle("show");
                 }
+            }
+            if (window.email.length > 0) {
+                document.getElementById(window.email).classList.remove("unread");
             }
             window.email = targetid;
         });

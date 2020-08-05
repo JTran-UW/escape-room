@@ -2,7 +2,7 @@
 
 $password = $_POST["password"];
 
-if ($password == "password123") {
+if ($password == "PASSWORD123") {
     include("congratulations.html");
 } else {
     include("incorrect.html");
