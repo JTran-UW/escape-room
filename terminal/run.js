@@ -164,7 +164,7 @@ var seq_reset = function() {
   document.getElementById("red").classList.remove("red-button-ready");
   document.getElementById("red").classList.add("red-button");
   document.getElementById("blue").classList.remove("blue-button-ready");
-  document.getElementById("blue").classList.add("bue-button");
+  document.getElementById("blue").classList.add("blue-button");
   document.getElementById("green").classList.remove("green-button-ready");
   document.getElementById("green").classList.add("green-button");
   document.getElementById("yellow").classList.remove("yellow-button-ready");

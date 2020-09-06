@@ -5,6 +5,11 @@ html {
     height: 100%;
 }
 
+@font-face {
+    font-family: Segoe UI;
+    src: url("../segoeuil.ttf");
+}
+
 .keybox {
     padding: 10px 15px;
     position: fixed;
