@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Segoe UI;
-    src: url("segoeuil.ttf");
+    src: url("../fonts/segoeuil.ttf");
 }
 
 body {
@@ -40,7 +40,7 @@ html::-webkit-scrollbar {
 }
 
 .login-background {
-    background-image: url("medical.jpg");
+    background-image: url("../images/medical.jpg");
     background-size: 100% auto;
     background-position: center;
     filter: blur(6px);
@@ -67,7 +67,7 @@ html::-webkit-scrollbar {
 }
 
 .curtain {
-    background-image: url("medical.jpg");
+    background-image: url("../images/medical.jpg");
     background-size: 100% auto;
     background-position: center;
     position: fixed;

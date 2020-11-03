@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Segoe UI;
-    src: url("../segoeuil.ttf");
+    src: url("../fonts/segoeuil.ttf");
 }
 
 p {
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background-image: url("landscape.jpg");
+    background-image: url("../images/landscape.jpg");
     background-size: auto 100%;
     background-position: center;
     margin-top: 0px;

@@ -94,7 +94,7 @@ window.onload = function() {
                 Leaks from the white house suggest very bad news: The US government is taking desperate measures to fight the coronavirus, which just weeks ago mutated to cause zombie-like symptoms.  The most recent 
                 declarations will allow them to search and take any documents or items that citizens have that may lead to a cure or treatment.  If you have any such documents or items, please report these to the Center 
                 for Disease Control (CDC) as soon as possible.<br><br>
-                <img src="cdc.jpg" style="width: 850px;"><br>
+                <img src="static/images/cdc.jpg" style="width: 850px;"><br>
                 CNN
                 `;
             } else if (targetid == "email6") {
@@ -136,7 +136,7 @@ window.onload = function() {
                 time.innerHTML = "9:00 AM 7/1";
                 content.innerHTML = `
                 Reports show the US government preparing to send the military into cities around the country to fight the growing coronavirus zombie pandemic.  More information to come.<br><br>
-                <img src="martiallaw.jpg" style="width: 750px;"><br>
+                <img src="static/images/martiallaw.jpg" style="width: 750px;"><br>
                 <br>
                 CNN
                 `;
@@ -225,7 +225,7 @@ window.onload = function() {
                 In a shocking turn of events the coronavirus has shown signs of mutating symptoms.  Reports from around the world show patients turning violent against other humans.  As hysteria spreads at the idea of a zombie
                 apocalypse, governments are yet to respond to this crisis' most recent evolution.<br>
                 <br>
-                <img src="covid.jpg" style="width:850px">
+                <img src="static/images/covid.jpg" style="width:850px">
                 <br>
                 CNN
                 `;

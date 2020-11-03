@@ -38,7 +38,7 @@ var guess = function(e) {
         var char = parseInt(src.charAt(i));
         var newChar = char + 1
         if (char < 6) {
-            hangman.src = "h" + newChar + ".png";
+            hangman.src = "static/images/h" + newChar + ".png";
         } else {
             window.location.href = "failed.html";
         }
