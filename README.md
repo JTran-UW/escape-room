@@ -1,4 +1,4 @@
-# escape-room
+# Escape Room
 
 ## Overview
 This escape room was a part of a project during my internship with Atlantic Street Center, a Seattle-based educational non-profit for low-income students of color.  
