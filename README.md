@@ -9,12 +9,15 @@ Scenario: The coronavirus has mutated into a zombie virus! You have come across 
 This project was originally deployed on an AWS EC2 machine, but it could be easier deployed with Python 3.
 
 Clone the project from Github
+
 ```git clone https://github.com/ProfJAT/escape-room.git```
 
 Open the terminal and enter the directory
+
 ```cd Your/Directory/Github/escape-room```
 
 Run a local HTTP server
+
 ```python -m http.server```
 
 Enjoy at localhost:8000!
